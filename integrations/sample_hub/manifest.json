@@ -1,0 +1,8 @@
+{
+  "domain": "sample_hub",
+  "name": "Sample Hub",
+  "config_flow": true,
+  "documentation": "https://example.com/sample_hub",
+  "integration_type": "device",
+  "requirements": []
+}

@@ -60,19 +60,24 @@ class ManifestManager:
             Selected integration type or None if skipped
         """
         print(f"\nSelect the `integration_type` for `{integration_name}`")
-        print(f"Options: {', '.join(self.INTEGRATION_TYPES)}")
-        print("Enter 'skip' to skip this integration")
+        print("  1. device")
+        print("  2. service")
+        print("  3. hub")
+        print("  0. skip")
         
         while True:
-            choice = input("> ").strip().lower()
+            choice = input("> ").strip()
             
-            if choice == "skip":
+            if choice == "0" or choice.lower() == "skip":
                 return None
-            
-            if choice in self.INTEGRATION_TYPES:
-                return choice
-            
-            print(f"Invalid choice. Please select one of: {', '.join(self.INTEGRATION_TYPES)}, or 'skip'")
+            elif choice == "1" or choice.lower() == "device":
+                return "device"
+            elif choice == "2" or choice.lower() == "service":
+                return "service"
+            elif choice == "3" or choice.lower() == "hub":
+                return "hub"
+            else:
+                print("Invalid choice. Please enter 1 (device), 2 (service), 3 (hub), or 0 (skip)")
     
     def update_manifest(self, manifest_path: Path, integration_type: str) -> bool:
         """Update a manifest.json file with the integration_type.

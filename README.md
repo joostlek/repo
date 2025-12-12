@@ -30,13 +30,21 @@ The tool will:
 3. Prompt you for each integration:
    ```
    Select the `integration_type` for `integration_name`
-   Options: device, service, hub
-   Enter 'skip' to skip this integration
+     1. device
+     2. service
+     3. hub
+     0. skip
    >
    ```
 4. Update the manifest with the selected type
 5. Validate the changes
 6. Commit each change individually
+
+### Input Options
+
+You can use either:
+- **Numbers**: `1` (device), `2` (service), `3` (hub), `0` (skip)
+- **Text**: `device`, `service`, `hub`, `skip`
 
 ### Integration Types
 
@@ -91,9 +99,11 @@ Found 3 manifest(s) that need integration_type added:
 ----------------------------------------------------------------------
 
 Select the `integration_type` for `sample_device`
-Options: device, service, hub
-Enter 'skip' to skip this integration
-> device
+  1. device
+  2. service
+  3. hub
+  0. skip
+> 1
 Setting integration_type to 'device' for sample_device
 ✓ Updated /path/to/integrations/sample_device/manifest.json
 ✓ Validation passed

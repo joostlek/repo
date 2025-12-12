@@ -1,0 +1,7 @@
+{
+  "domain": "no_config_flow",
+  "name": "No Config Flow",
+  "config_flow": false,
+  "documentation": "https://example.com/no_config_flow",
+  "requirements": []
+}

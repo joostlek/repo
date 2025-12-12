@@ -1,0 +1,13 @@
+{
+  "domain": "sample_service",
+  "name": "Sample Service",
+  "codeowners": [
+    "@joostlek"
+  ],
+  "config_flow": true,
+  "documentation": "https://example.com/sample_service",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "1.0.0"
+}

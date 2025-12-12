@@ -175,6 +175,18 @@ class ManifestManager:
                 capture_output=True
             )
             
+            # Check if there are changes to commit
+            status_result = subprocess.run(
+                ["git", "diff", "--cached", "--quiet", str(manifest_path)],
+                cwd=self.repo_root,
+                capture_output=True
+            )
+            
+            # If exit code is 0, there are no changes
+            if status_result.returncode == 0:
+                print(f"ℹ No changes to commit for {integration_name} (already up to date)")
+                return True
+            
             # Commit with message
             commit_message = f"Add integration_type to `manifest.json` for {integration_name}"
             subprocess.run(
